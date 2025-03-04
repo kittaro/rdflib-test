@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<rdf:RDF
+    xmlns="http://www.example.org/gadgets#"
+    xml:base="http://www.example.org/gadgets"
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+    xmlns:owl="http://www.w3.org/2002/07/owl#"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema#">
+  
+  <owl:Ontology rdf:about="http://www.example.org/gadgets"/>
+  
+  <!-- Классы -->
+  <owl:Class rdf:about="#Gadget"/>
+  <owl:Class rdf:about="#Manufacturer"/>
+  <owl:Class rdf:about="#Price"/>
+  
+  <!-- Ценовые сегменты -->
+  <owl:Class rdf:about="#Высокий">
+    <rdfs:subClassOf rdf:resource="#Price"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Средний">
+    <rdfs:subClassOf rdf:resource="#Price"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Низкий">
+    <rdfs:subClassOf rdf:resource="#Price"/>
+  </owl:Class>
+  
+  <!-- Типы гаджетов -->
+  <owl:Class rdf:about="#Ноутбук">
+    <rdfs:subClassOf rdf:resource="#Gadget"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Смартфон">
+    <rdfs:subClassOf rdf:resource="#Gadget"/>
+  </owl:Class>
+  <owl:Class rdf:about="#Планшет">
+    <rdfs:subClassOf rdf:resource="#Gadget"/>
+  </owl:Class>
+  
+  <!-- Производители с объединёнными утверждениями -->
+  <owl:NamedIndividual rdf:about="#Apple">
+    <rdf:type rdf:resource="#Manufacturer"/>
+    <!-- Ценовые сегменты -->
+    <rdf:type rdf:resource="#Высокий"/>
+    <rdf:type rdf:resource="#Средний"/>
+    <!-- Типы гаджетов -->
+    <rdf:type rdf:resource="#Ноутбук"/>
+    <rdf:type rdf:resource="#Смартфон"/>
+    <rdf:type rdf:resource="#Планшет"/>
+  </owl:NamedIndividual>
+  
+  <owl:NamedIndividual rdf:about="#Microsoft">
+    <rdf:type rdf:resource="#Manufacturer"/>
+    <!-- Ценовой сегмент -->
+    <rdf:type rdf:resource="#Высокий"/>
+    <!-- Тип гаджета -->
+    <rdf:type rdf:resource="#Ноутбук"/>
+  </owl:NamedIndividual>
+  
+  <owl:NamedIndividual rdf:about="#Samsung">
+    <rdf:type rdf:resource="#Manufacturer"/>
+    <!-- Ценовые сегменты -->
+    <rdf:type rdf:resource="#Высокий"/>
+    <rdf:type rdf:resource="#Средний"/>
+    <rdf:type rdf:resource="#Низкий"/>
+    <!-- Типы гаджетов -->
+    <rdf:type rdf:resource="#Смартфон"/>
+    <rdf:type rdf:resource="#Планшет"/>
+  </owl:NamedIndividual>
+  
+  <owl:NamedIndividual rdf:about="#Xiaomi">
+    <rdf:type rdf:resource="#Manufacturer"/>
+    <!-- Ценовые сегменты -->
+    <rdf:type rdf:resource="#Средний"/>
+    <rdf:type rdf:resource="#Низкий"/>
+    <!-- Типы гаджетов -->
+    <rdf:type rdf:resource="#Смартфон"/>
+    <rdf:type rdf:resource="#Планшет"/>
+  </owl:NamedIndividual>
+  
+</rdf:RDF>
